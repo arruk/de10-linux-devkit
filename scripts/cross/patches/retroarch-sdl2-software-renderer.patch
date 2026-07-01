@@ -1,0 +1,24 @@
+diff --git a/gfx/drivers/sdl2_gfx.c b/gfx/drivers/sdl2_gfx.c
+index 6e19672..b95575b 100644
+--- a/gfx/drivers/sdl2_gfx.c
++++ b/gfx/drivers/sdl2_gfx.c
+@@ -217,7 +217,18 @@ static void sdl2_init_renderer(sdl2_video_t *vid)
+ 
+    if (!vid->renderer)
+    {
+-      RARCH_ERR("[SDL2] Failed to initialize renderer: %s.", SDL_GetError());
++      RARCH_WARN("[SDL2] Accelerated renderer unavailable: %s. "
++            "Falling back to software rendering.\n", SDL_GetError());
++      flags = SDL_RENDERER_SOFTWARE;
++      if (vid->video.vsync)
++         flags |= SDL_RENDERER_PRESENTVSYNC;
++      vid->renderer = SDL_CreateRenderer(vid->window, -1, flags);
++   }
++
++   if (!vid->renderer)
++   {
++      RARCH_ERR("[SDL2] Failed to initialize software renderer: %s.\n",
++            SDL_GetError());
+       return;
+    }
+ 

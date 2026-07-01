@@ -1,0 +1,85 @@
+# Local configuration
+/config/cross.env
+*.local
+*.env
+!.env.example
+!*.env.example
+
+# Build and packaging output
+/build/
+/dist/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+core
+core.*
+
+# C/C++ build artifacts
+*.a
+*.d
+*.dll
+*.dylib
+*.elf
+*.exe
+*.la
+*.lo
+*.o
+*.out
+*.so
+*.so.*
+
+# Autotools generated files
+.deps/
+.libs/
+aclocal.m4
+autom4te.cache/
+compile
+config.cache
+config.guess
+config.h
+config.h.in
+config.log
+config.mk
+config.status
+config.sub
+depcomp
+install-sh
+libtool
+ltmain.sh
+missing
+stamp-h1
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# Quartus/Qsys generated output
+db/
+incremental_db/
+output_files/
+simulation/
+*.cmp
+*.done
+*.fit.*
+*.jdi
+*.map.*
+*.pin
+*.pof
+*.qarlog
+*.qws
+*.rpt
+*.smsg
+*.sof
+*.summary
+*.sopcinfo
+*.sta.*
+*.stp
+*.vcd
+*.wlf
