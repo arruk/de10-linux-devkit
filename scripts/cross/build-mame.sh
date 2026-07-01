@@ -15,9 +15,9 @@ MAME_CFLAGS="$TARGET_CFLAGS \
 	-isystem $SYSROOT/usr/include/$TARGET_TRIPLE \
 	-isystem $SYSROOT/usr/include"
 
-make -C build/sources/mame2000-libretro clean
+make -C repos/mame2000-libretro clean
 
-make -C build/sources/mame2000-libretro \
+make -C repos/mame2000-libretro \
 	platform=unix \
 	ARM=1 \
 	CC="$CC" \

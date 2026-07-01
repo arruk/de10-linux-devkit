@@ -120,7 +120,7 @@ Ele executa:
 
 ```text
 scripts/cross/check-host.sh
-scripts/cross/fetch-sources.sh
+git submodule update --init --recursive
 scripts/cross/build.sh
 ```
 
@@ -200,8 +200,8 @@ O IWAD não é baixado ou incluído pelos scripts.
 Para jogos arcade antigos, os fontes esperados são:
 
 ```text
-build/sources/retroarch/
-build/sources/mame2000-libretro/
+repos/RetroArch/
+repos/mame2000-libretro/
 ```
 
 O core `mame2000_libretro.so` deve ser compilado para ARM usando somente os

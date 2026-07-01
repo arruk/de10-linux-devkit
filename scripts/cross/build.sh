@@ -6,7 +6,7 @@ readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/common.sh"
 
 readonly ROOT_DIR="$(cross_root_dir)"
-readonly SOURCE_DIR="$ROOT_DIR/build/sources"
+readonly SOURCE_DIR="$ROOT_DIR/repos"
 readonly WORK_DIR="$ROOT_DIR/build/cross"
 readonly PREFIX="$WORK_DIR/prefix"
 readonly DIST_DIR="$ROOT_DIR/dist/chocolate-doom-de10"
@@ -22,7 +22,7 @@ load_toolchain
 for source_dir in chocolate-doom SDL SDL_mixer; do
     if [[ ! -d "$SOURCE_DIR/$source_dir" ]]; then
         printf 'Fonte ausente: %s\n' "$SOURCE_DIR/$source_dir" >&2
-        printf 'Execute scripts/cross/fetch-sources.sh primeiro.\n' >&2
+        printf 'Execute git submodule update --init --recursive primeiro.\n' >&2
         exit 1
     fi
 done

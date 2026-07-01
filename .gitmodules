@@ -1,0 +1,15 @@
+[submodule "repos/SDL"]
+	path = repos/SDL
+	url = https://github.com/libsdl-org/SDL.git
+[submodule "repos/SDL_mixer"]
+	path = repos/SDL_mixer
+	url = https://github.com/libsdl-org/SDL_mixer.git
+[submodule "repos/chocolate-doom"]
+	path = repos/chocolate-doom
+	url = https://github.com/chocolate-doom/chocolate-doom.git
+[submodule "repos/RetroArch"]
+	path = repos/RetroArch
+	url = https://github.com/libretro/RetroArch.git
+[submodule "repos/mame2000-libretro"]
+	path = repos/mame2000-libretro
+	url = https://github.com/libretro/mame2000-libretro.git

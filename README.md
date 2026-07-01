@@ -11,26 +11,10 @@ Baixe **Linux LXDE Desktop (Kernel 4.5)** na página oficial da Terasic:
 
 Extraia o arquivo baixado até obter a imagem `.img`.
 
-Baixe também os fontes usados na compilação:
+Inicialize os submodules com os fontes usados na compilação:
 
 ```bash
-mkdir -p build/sources
-
-git clone --branch release-2.0.14 \
-  https://github.com/libsdl-org/SDL.git build/sources/SDL
-
-git clone --branch release-2.0.4 \
-  https://github.com/libsdl-org/SDL_mixer.git build/sources/SDL_mixer
-
-git clone --branch chocolate-doom-3.1.1 \
-  https://github.com/chocolate-doom/chocolate-doom.git \
-  build/sources/chocolate-doom
-
-git clone https://github.com/libretro/RetroArch.git \
-  build/sources/retroarch
-
-git clone https://github.com/libretro/mame2000-libretro.git \
-  build/sources/mame2000-libretro
+git submodule update --init --recursive
 ```
 
 ## 2. Montar a imagem e preparar o sysroot
@@ -80,7 +64,7 @@ Todos os dados do dispositivo selecionado serão apagados.
 
 ## 4. Compilar
 
-Os fontes devem estar em `build/sources/`.
+Os fontes devem estar em `repos/`.
 
 Para compilar e empacotar o Chocolate Doom:
 
@@ -106,7 +90,7 @@ Para compilar o RetroArch:
 ```
 
 O `build-mame.sh` gera `mame2000_libretro.so` em
-`build/sources/mame2000-libretro/`.
+`repos/mame2000-libretro/`.
 
 O pacote será criado em:
 

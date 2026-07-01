@@ -20,7 +20,7 @@ readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/build-common.sh"
 
 readonly ROOT_DIR="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
-readonly SOURCE_DIR="$ROOT_DIR/build/sources/RetroArch"
+readonly SOURCE_DIR="$ROOT_DIR/repos/RetroArch"
 readonly SDL_PREFIX="$ROOT_DIR/build/cross/prefix"
 readonly DIST_DIR="$ROOT_DIR/dist/retroarch-de10"
 readonly SYSROOT="$ROOT_DIR/build/sysroot"
@@ -235,7 +235,7 @@ cp -a -- "$SDL_PREFIX/lib/libSDL2-2.0.so.0" \
     "$SDL_PREFIX/lib/libSDL2-2.0.so.0.14.0" \
     "$DIST_DIR/lib/"
 
-core="$ROOT_DIR/build/sources/mame2000-libretro/mame2000_libretro.so"
+core="$ROOT_DIR/repos/mame2000-libretro/mame2000_libretro.so"
 if [[ ! -f "$core" ]]; then
     printf 'Core MAME 2000 ausente: %s\n' "$core" >&2
     printf 'Compile mame2000-libretro antes de montar o pacote.\n' >&2

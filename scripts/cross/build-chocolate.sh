@@ -14,7 +14,7 @@ readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/build-common.sh"
 
 readonly ROOT_DIR="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
-readonly SOURCE_DIR="$ROOT_DIR/build/sources"
+readonly SOURCE_DIR="$ROOT_DIR/repos"
 
 if [[ ! -d "$SOURCE_DIR/chocolate-doom" ]]; then
 	printf 'Fonte ausente: %s\n' "$SOURCE_DIR/chocolate-doom" >&2

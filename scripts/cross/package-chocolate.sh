@@ -16,7 +16,7 @@ done
 
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 readonly ROOT_DIR="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
-readonly SOURCE_DIR="$ROOT_DIR/build/sources"
+readonly SOURCE_DIR="$ROOT_DIR/repos"
 
 readonly WORK_DIR="$ROOT_DIR/build/cross/chocolate-doom/"
 readonly PREFIX="$ROOT_DIR/build/cross/prefix"
