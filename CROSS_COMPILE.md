@@ -40,25 +40,11 @@ sudo apt install \
 
 Use a toolchain Debian junto com o sysroot exato da imagem LXDE da placa.
 
-## 2. Configurar o cross-compile
+## 2. Preparar o sysroot
 
-```bash
-cp config/cross.env.example config/cross.env
-```
-
-`config/cross.env` não é versionado.
-
-Há duas opções locais para fornecer headers e bibliotecas ARM:
-
-1. Sysroot já fornecido pelo cross-compiler. Com `SYSROOT=` vazio, os
-   scripts consultam automaticamente:
-
-```bash
-arm-linux-gnueabihf-gcc -print-sysroot
-```
-
-2. Rootfs ARM disponível localmente, por exemplo a partição Linux do
-   microSD montada no computador:
+Os scripts esperam headers e bibliotecas ARM em `build/sysroot`. Gere esse
+diretório a partir do rootfs ARM da placa, por exemplo a partição Linux do
+microSD montada no computador:
 
 ```bash
 ./scripts/cross/sync-sysroot.sh /media/$USER/rootfs
@@ -83,7 +69,6 @@ No computador, importe o arquivo trazido pelo pendrive:
 ```
 
 O sysroot importado fica em `build/sysroot` e é validado automaticamente.
-Também é possível definir outro caminho em `SYSROOT`.
 
 Uma imagem runtime frequentemente possui bibliotecas, mas não headers e
 links de desenvolvimento. Se a validação do rootfs falhar, use uma imagem
