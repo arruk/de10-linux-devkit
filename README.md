@@ -81,6 +81,9 @@ O pacote será criado em:
 dist/chocolate-doom-de10.tar.gz
 ```
 
+O IWAD nao e incluido no pacote. Para extrair o `DOOM1.WAD` shareware, veja
+[IWAD.md](IWAD.md).
+
 Para compilar o RetroArch:
 
 ```bash

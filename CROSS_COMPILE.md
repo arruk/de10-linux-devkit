@@ -152,7 +152,8 @@ aplay -l
 O `file` deve indicar `ELF 32-bit`, `ARM` e `EABI5`. Se `ldd` reportar uma
 biblioteca ausente, ela deve vir do mesmo BSP usado no sysroot.
 
-O IWAD não é baixado ou incluído pelos scripts.
+O IWAD não é baixado ou incluído pelos scripts. Para extrair o `DOOM1.WAD`
+shareware, veja [IWAD.md](IWAD.md).
 
 ## RetroArch e MAME 2000
 
